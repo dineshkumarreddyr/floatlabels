@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html data-ng-app="FloatingLabel">
+<head>
+	<title>Floating Labels Angular Version</title>
+	<link rel="stylesheet" type="text/css" href="styles/floatlabels.css">
+</head>
+<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+	}
+	.float-header{
+		padding: 25px;
+		height: 30px;
+		background: #3e4147;
+		color: #fff;
+		margin-bottom: 20px;
+	}
+	body{
+		font-family: 'Segoe UI light',Open sans;
+		font-family: 14px;
+		background: #f4f7fc;
+	}
+	input{
+		margin-bottom: 10px;
+		margin-top: 10px;
+		width: 400px;
+	}
+	.dn-form-wrapper{
+		margin-left: 20px;
+	}
+	.float-footer{
+		height:20px;
+		background: #3e4147;
+		padding:10px;
+		position: fixed;
+		bottom: 0;
+		color:#fff;
+		width: 100%;
+	}
+</style>
+<body>
+	<header class="float-header">
+		<h2>Floating labels - An angular component</h2>
+	</header>
+	<section>
+		<div class="dn-form-wrapper">
+			<form name="floatlabel">
+
+				<!-- Basic float labels (Float label = input place holder)-->
+				<p>Basic Float labels (Float label = input place holder)</p>
+				<p>For Developers: Required attributes</p>
+				<p>float-type="basic"</p>
+				<div>
+					<input type="text" data-ng-model="basic.username" float-type="basic" float-label name="username" placeholder="User Name" />
+				</div>
+
+				<!-- Customized float labels (Float label = Custom label) -->
+				<p>Custom Float labels (Float label = Custom text; When watermark and float label are different)</p>
+				<p>For Developers: Required attributes</p>
+				<p>float-type="custom"</p>
+				<p>custom-label='User Name'</p>
+				<div>
+					<input type="text" data-ng-model="custom.username" float-type="custom" custom-label='User Name' float-label name="username" placeholder="Enter user name" />
+				</div>
+
+				<!-- Float label positions -->
+				<p>Position Float labels (default:left)</p>
+				<p>For Developers: Required attributes</p>
+				<p>float-type="basic"</p>
+				<p>placeholder-position-right="true"</p>
+				<div>
+					<input type="text" data-ng-model="position.username" placeholder-position-right="true" float-type="basic" custom-label='User Name' float-label name="username" placeholder="User name" style="direction:RTL;padding-left:0;padding-right: 5px;" />
+				</div>
+
+				<!-- Error Validation -->
+				<p>Validation Labels (Required -  Works when move out focus from control)</p>
+				<p>For Developers: Required attributes</p>
+				<p>float-type="basic"</p>
+				<p>validation-label="true"</p>
+				<div>
+					<input type="text" data-ng-model="validation.username" validation-label="true" float-type="basic" custom-label='User Name' float-label name="username" placeholder="User name" required />
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer class="float-footer">
+		<h5>Happy to receive feedbacks. -- Dinesh Rachumalla</h5>
+	</footer>
+	<!-- External library references -->
+	<script src="libs/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="directive/floatlabel.directive.js"></script>
+</body>
+</html>
